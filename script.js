@@ -1,12 +1,64 @@
 /**
  * Created by nhatnk on 4/26/17.
  */
-let SPEED = 80;
-let SIZE = 50;
-let FPS = 500;
-let TOP = 40;
-let LEFT = 40;
-function Hero(image){
+const SPEED = 40;
+const SIZE = 50;
+const FPS = 500;
+const TOP = 40;
+const LEFT = 40;
+const IMAGE = 'pikachu.png';
+const vX = 0;
+const vY = 0;
+
+
+let Hero = function () {
+  this.fps = FPS;
+  this.top = TOP;
+  this.left = LEFT;
+  this.size = SIZE;
+  this.speed = SPEED;
+
+
+}
+Hero.prototype.draw = function(){
+  this.canvas = document.createElement('canvas');
+  this.canvas.setAttribute("id","myImage");
+  this.context = this.canvas.getContext('2d');
+  document.body.appendChild(this.canvas);
+  this.image = new Image();
+  this.image.src = IMAGE;
+  this.canvas.width = 500;
+  this.canvas.height = 500;
+  this.context.drawImage(this.image,vX,vY);
+
+
+}
+
+Hero.prototype.loop = function (){
+
+}
+Hero.prototype.moveRight = function(){
+
+}
+Hero.prototype.moveLeft = function (){
+
+}
+Hero.prototype.moveUp = function (){
+
+}
+Hero.prototype.moveDown = function(){
+
+}
+
+Hero.prototype.init = function(){
+  console.log('loop')
+    this.draw();
+
+}
+
+
+
+/*function Hero(image){
   this.image = image;
   this.top = TOP;
   this.left = LEFT;
@@ -58,8 +110,10 @@ function start(){
 
   document.getElementById('game').innerHTML = hero.getHeroElement();
   setTimeout(start, FPS)
-}
+}*/
 
-start();
+//start();
 
 
+let character = new Hero();
+setTimeout(character.init(),200)
