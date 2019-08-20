@@ -2,16 +2,14 @@
  * Created by nhatnk on 4/26/17.
  */
 const SPEED = 40;
-const SIZE = 50;
+const SIZE = 100;
 const FPS = 500;
-const TOP = 40;
-const LEFT = 40;
-const IMAGE = 'pikachu.png';
-const vX = 0;
-const vY = 0;
+const TOP = 0;
+const LEFT = 0;
 
 
-let Hero = function () {
+
+/*let Hero = function () {
   this.fps = FPS;
   this.top = TOP;
   this.left = LEFT;
@@ -54,11 +52,11 @@ Hero.prototype.init = function(){
   console.log('loop')
     this.draw();
 
-}
+}*/
 
 
 
-/*function Hero(image){
+function Hero(image){
   this.image = image;
   this.top = TOP;
   this.left = LEFT;
@@ -88,7 +86,7 @@ Hero.prototype.init = function(){
   }
 }
 
-var hero = new Hero('ifrit.png');
+var hero = new Hero('clipart727039.png');
 
 function start(){
 
@@ -109,11 +107,13 @@ function start(){
 
 
   document.getElementById('game').innerHTML = hero.getHeroElement();
-  setTimeout(start, FPS)
-}*/
+  //setTimeout(start, FPS)
+  requestAnimationFrame(start)
+}
 
-//start();
+start();
 
 
+/*
 let character = new Hero();
-setTimeout(character.init(),200)
+setTimeout(character.init(),200)*/
